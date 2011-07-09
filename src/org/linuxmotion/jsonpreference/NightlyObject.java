@@ -14,6 +14,7 @@ public class NightlyObject {
 	private String mDate;
 	private String mZipName;
 	private String mInstallable;
+	private String mDescription;
 	
 	LinearLayout mNightlyLayout;
 	TextView mNightlyVersion;
@@ -103,6 +104,12 @@ public class NightlyObject {
 	 */
 	public String getInstallable() {
 		return mInstallable;
+	}
+	public void setDescription(String mDescription) {
+		this.mDescription = mDescription;
+	}
+	public String getDescription() {
+		return mDescription;
 	}
 	
 	
