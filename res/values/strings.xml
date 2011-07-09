@@ -2,4 +2,5 @@
 <resources>
     <string name="hello">Hello World, JSONPreferenceViewActivity!</string>
     <string name="app_name">JSONPreferenceView</string>
+    <string name="refresh" >Refresh</string>
 </resources>
