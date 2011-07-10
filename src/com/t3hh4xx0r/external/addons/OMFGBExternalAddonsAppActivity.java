@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.AlertDialog;
@@ -35,6 +36,7 @@ import android.widget.RelativeLayout;
 
 import com.t3hh4xx0r.external.addons.nightlies.NightlyObject;
 import com.t3hh4xx0r.external.addons.nightlies.OnNightlyPreferenceClickListener;
+import com.t3hh4xx0r.external.addons.utils.Constants;
 import com.t3hh4xx0r.external.addons.utils.DownloadFile;
 
 public class OMFGBExternalAddonsAppActivity extends PreferenceActivity {
@@ -59,11 +61,7 @@ public class OMFGBExternalAddonsAppActivity extends PreferenceActivity {
 	private static final int DOWNLOAD_COMPLETE = 1;
 	
 
-    //This is needed for device permanace for intents that
-    // do not send the device type with it. IE. notifications
-    private static String mDeviceScript;
 
-	private String externalStorageDir = "/mnt/sdcard/t3hh4xx0r/downloads/";
 	
 	private static boolean mFlashOK = false;
 	
@@ -73,13 +71,7 @@ public class OMFGBExternalAddonsAppActivity extends PreferenceActivity {
         super.onCreate(savedInstanceState);
         mFlashOK = true;
         
-        Intent i = this.getIntent();
-        if(mDeviceScript == null){
-        	// We need to retrive the device script name, but only once
-        	mDeviceScript = i.getStringExtra("DownloadScript");
-        
-        	if(mDeviceScript==null)mDeviceScript="sholes.js";
-        }
+  
         
         
 
@@ -287,21 +279,21 @@ public class OMFGBExternalAddonsAppActivity extends PreferenceActivity {
             //is = this.getResources().openRawResource(R.raw.jsonomfgb);
             
             
-            File updateFile = new File(externalStorageDir + mDeviceScript);
+            File updateFile = new File(Constants.DOWNLOAD_DIR + Constants.getDeviceScript());
         	try{
         		Log.i(TAG, updateFile.toString());
         		
-        		File f = new File(externalStorageDir);
+        		File f = new File(Constants.DOWNLOAD_DIR );
          		if(!f.exists()){
          			
          			f.mkdirs();
          			Log.i(TAG, "File diretory does not exist, creating it");
          		}
          		f = null;
-         		f = new File(externalStorageDir + "/");
+         		f = new File(Constants.DOWNLOAD_DIR );
         		
         		// Needed because the manager does not handle https connections
-        		DownloadFile.updateAppManifest(mDeviceScript);
+        		DownloadFile.updateAppManifest(Constants.getDeviceScript());
         		
         		is = new FileInputStream(updateFile);
         	}
@@ -344,7 +336,13 @@ public class OMFGBExternalAddonsAppActivity extends PreferenceActivity {
 	                n.setVersion(post.getString("version"));
 	                n.setZipName(post.getString("name"));
 	                n.setInstallable(post.getString("installable"));
-	                n.setDescription(post.getString("description"));
+	                try{
+	                	n.setDescription(post.getString("description"));
+	                }catch(JSONException e){
+	                	n.setDescription("Older Nightly, Please select a nwer one");
+	                	
+	                	
+	                }
 	                
 	                PreferenceScreen inscreen = getPreferenceManager().createPreferenceScreen(this);
 	                inscreen.setSummary(n.getDescription());

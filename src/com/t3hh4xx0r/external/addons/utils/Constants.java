@@ -2,6 +2,8 @@ package com.t3hh4xx0r.external.addons.utils;
 
 import java.io.File;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Environment;
 
 public final class Constants {
@@ -10,7 +12,7 @@ public final class Constants {
 	/**
 	 *  Variable to turn debuging on across the app
 	 */
-	public static boolean FULL_DBG = false;
+	public static boolean FULL_DBG = true;
 	/**
 	 *  External storage mount point
 	 *  @hide
@@ -21,7 +23,7 @@ public final class Constants {
 	/**
 	 * Basic OMFGB downloads directory
 	 */
-    public static final String DOWNLOAD_DIR = extStorageDirectory + "/t3hh4xx0r/downloads";
+    public static final String DOWNLOAD_DIR = extStorageDirectory + "/t3hh4xx0r/downloads/";
     
     /**
      * ClockWorkMod Recovery flash directory 
@@ -42,6 +44,26 @@ public final class Constants {
      *  Base URL for the manifest files for the addons, nightlies, and eventually the release roms.
      */
     public static final String BASE_SCRIPT_URL = "https://raw.github.com/OMFGB/OMFGBManifests/master/"; 
+    
+    
+    
+    
+    private static String DEVICE_SCRIPT;
+
+
+
+
+	public static void setDeviceScript(String deviceScript) {
+		DEVICE_SCRIPT = deviceScript;
+	}
+
+
+
+
+	public static String getDeviceScript() {
+		return DEVICE_SCRIPT;
+	} 
+    
 	
 
 }
