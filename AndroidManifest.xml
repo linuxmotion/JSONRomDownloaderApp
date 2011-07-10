@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="org.linuxmotion.jsonpreference"
+      package="com.t3hh4xx0r.external.addons"
       android:versionCode="1"
       android:versionName="1.0">
       
@@ -13,7 +13,7 @@
 
     <application android:icon="@drawable/icon" android:label="@string/app_name">
     
-        <activity android:name=".JSONPreferenceViewActivity"
+        <activity android:name="com.t3hh4xx0r.external.addons.OMFGBExternalAddonsAppActivity"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

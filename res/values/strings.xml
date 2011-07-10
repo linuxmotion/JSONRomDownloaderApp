@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="hello">Hello World, JSONPreferenceViewActivity!</string>
-    <string name="app_name">JSONPreferenceView</string>
+    <string name="app_name">OMFGB External Addons App</string>
     <string name="refresh" >Refresh</string>
 </resources>
