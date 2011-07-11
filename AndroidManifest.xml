@@ -21,7 +21,14 @@
             </intent-filter>
         </activity>
         
-         <activity android:name="com.t3hh4xx0r.external.addons.OMFGBExternalAddonsAppActivity"
+         <activity android:name="com.t3hh4xx0r.external.addons.OMFGBExternalAddonsAppNightlyActivity"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        
+           <activity android:name="com.t3hh4xx0r.external.addons.OMFGBExternalAddonsAppAddonsActivity"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

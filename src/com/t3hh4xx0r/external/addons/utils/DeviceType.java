@@ -18,6 +18,8 @@ static boolean deviceEquals(String s){
 		
 	}
 
+public static String DEVICE_TYPE;
+
 
 // Device name constatnts
 

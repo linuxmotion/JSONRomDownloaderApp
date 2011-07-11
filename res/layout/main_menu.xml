@@ -10,12 +10,15 @@
                 android:summary="@string/addons_summary">
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="com.t3hh4xx0r.external.addons"
-                    android:targetClass="com.t3hh4xx0r.external.addons.OMFGBExternalAddonsAppActivity" />
+                    android:targetClass="com.t3hh4xx0r.external.addons.OMFGBExternalAddonsAppAddonsActivity" />
         </PreferenceScreen>
         
          <PreferenceScreen android:key="nightlies"
                 android:title="@string/nightlies_title" 
                 android:summary="@string/nightlies_summary">
+                 <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.t3hh4xx0r.external.addons"
+                    android:targetClass="com.t3hh4xx0r.external.addons.OMFGBExternalAddonsAppNightlyActivity" />
         </PreferenceScreen>
         
        </PreferenceCategory> 

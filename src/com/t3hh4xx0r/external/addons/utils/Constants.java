@@ -45,9 +45,24 @@ public final class Constants {
      */
     public static final String BASE_SCRIPT_URL = "https://raw.github.com/OMFGB/OMFGBManifests/master/"; 
     
+
+    /*
+     *  The associated download has been completed
+     * 
+     */
+	public static final int DOWNLOAD_COMPLETE = 1;
     
+	
+	/**
+	 * 
+	 * 
+	 */
+	
+	public static String ADDONS = "addons.js"; 
     
-    
+    /**
+     * The script ised for updating the app
+     */
     private static String DEVICE_SCRIPT;
 
 
